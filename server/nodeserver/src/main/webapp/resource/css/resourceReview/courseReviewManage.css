@@ -1,0 +1,88 @@
+/* 已删除状态Ican */
+.deletedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #ff0000;			/* 圆圈颜色-红色 */
+    vertical-align: 0px;
+    background: #ff0000;
+}
+/* 终止状态Ican */
+.terminationIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #b34242;			/* 圆圈颜色-红色 */
+    vertical-align: 0px;
+    background: #b34242;
+}
+/*未提交状态Ican*/
+.noSbmitSIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #dee0d0;			/* 圆圈颜色-橘色 */
+    vertical-align: 0px;
+    background: #dee0d0;
+}
+/*已提交状态Ican*/
+.submitedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #ff8040;			/* 圆圈颜色-橘色 */
+    vertical-align: 0px;
+    background: #ff8040;
+}
+/*未通过状态Ican*/
+.noPassIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #f9ee0c;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #f9ee0c;
+}
+
+/*已通过状态Ican*/
+.passIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #8fda8b;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #8fda8b;
+}
+
+/* 已发布状态Ican */
+.launchedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #2BC042;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #2BC042;
+}
+
+
+.btn.btn-link {
+    background: 0 0 !important;
+    color: white !important;
+    font-size:12px;
+    padding: 4px 12px !important;
+    line-height: 20px !important;
+}

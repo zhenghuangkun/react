@@ -1,0 +1,37 @@
+.customBootstrap .pagination>li>a{
+	margin-right:5px;
+	border-radius:5px;
+	background:#fff;
+	color:#428bca;
+	border-color:#ccc;
+	padding:6px 15px;
+}
+.customBootstrap .pagination>li>a:hover,
+.customBootstrap .pagination>li>a:focus{
+	color:#fff;background:#428bca;border-color:#428bca
+}
+.customBootstrap .pagination>.active>a,
+.customBootstrap .pagination>.active>a:hover,
+.customBootstrap .pagination>.active>a:focus{
+	color:#fff;background:#428bca;border-color:#428bca
+}
+.customBootstrap .pagination>.disabled>a,
+.customBootstrap .pagination>.disabled>a:hover,
+.customBootstrap .pagination>.disabled>a:focus{
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+.customBootstrap .pagination .arrow2{
+	margin:3px 8px 5px 0
+}
+.customBootstrap .pagination a:hover .arrow2{
+	border-right-color:#fff
+}
+.customBootstrap .pagination .arrow3{
+	margin:3px 0 5px 8px
+}
+.customBootstrap .pagination a:hover .arrow3{
+	border-left-color:#fff
+}

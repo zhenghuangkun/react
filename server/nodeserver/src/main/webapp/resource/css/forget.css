@@ -1,0 +1,238 @@
+@charset "utf-8";
+.w692 {
+    width: 692px;
+    margin: 0 auto;
+}
+.adm_body {
+    margin-top: 30px;
+    min-height: 1000px;
+}
+.reg_form h3 {
+    height: 70px;
+    line-height: 40px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.reg_form h3 span.hover {
+    background: #2498ff;
+    color: #fff;
+}
+.reg_form h3 span {
+    width: 153px;
+    float: left;
+    text-align: center;
+    color: #2498ff;
+    height: 40px;
+    overflow: hidden;
+    background: #d8edff;
+}
+
+.reg_form h3 span em {
+    padding-right: 10px;
+    font-size: 20px;
+    vertical-align: -2px;
+    line-height: 36px;
+}
+.reg_form h3 strong.hrig {
+    background-position: -48px 0;
+}
+.reg_form h3 strong {
+    float: left;
+    width: 24px;
+    height: 100%;
+    overflow: hidden;
+    background: url(../images/adm_ico06.gif) left top no-repeat;
+}
+.select-toggle li{background: url(../images/chose-bg1.jpg) no-repeat left center; height: 34px;}
+.select-toggle li:hover{cursor: pointer;}
+.select-toggle li.on{background: url(../images/chose-bg.jpg) no-repeat left center;}
+.select-toggle li p{margin: 0;line-height: 34px;padding-left: 44px;}
+li, ol, ul {
+    list-style: none;
+}
+.reg_form h4 {
+    font-weight: 400;
+    line-height: 30px;
+    clear: both;
+    padding-top: 20px;
+    text-align: left;
+}
+.reg_form dl {
+    margin-top: 20px;
+    clear: both;
+}
+.reg_form dl:after {
+    content: "";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+.reg_form dt {
+    float: left;
+    width: 24%;
+    text-align: right;
+    height: 34px;
+    line-height: 34px;
+}
+
+dd {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+.margin-t {
+    margin-top: 20px;
+}
+.reg_form dd {
+    text-align: left;
+    width: 70%;
+    float: right;
+}
+.clearfix {
+    zoom: 1;
+}
+.reg_form dl:after {
+    content: "";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+.reg_form dd .w_6 {
+    width: 160px;
+    float: left;
+}
+.reg_form dd .w_5 {
+    width: 95px;
+    float: left;
+}
+.blue_btn {
+    border: 1px solid #2498ff;
+    background: #2498ff;
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+}
+button, input, select {
+    font: 13px/26px 'Microsoft YaHei',Helvetica;
+    color: #777;
+    vertical-align: middle;
+}
+blockquote, body, button, center, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, html, img, input, li, ol, table, td, textarea, th, tr, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 13px/26px 'Microsoft YaHei',Helvetica;
+    color: #474747;
+    text-align: center;
+}
+.reg_form dd span.error {
+    background: url(../images/adm_ico02.png) 0 center no-repeat;
+    color: #e64141;
+}
+.reg_form dd span.warning {
+    background: url(../images/adm_ico00.png) 0 center no-repeat;
+    color: #e64141;
+}
+
+element.style {
+    display: inline;
+}
+
+.reg_form dd span.warning {
+    background: url(../images/adm_ico00.png) 0 center no-repeat;
+    color: #e64141;
+}
+
+.btn {
+    clear: both;
+    padding-top: 15px;
+}
+.mt30 {
+    margin-top: 30px;
+}
+.btn .button {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    cursor: pointer;
+    border: 0;
+}
+a.button, input.button {
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font: 16px/36px 'Microsoft YaHei',Helvetica;
+    background: #2498ff;
+}
+dl {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+dt {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+.reg_form dd span.correct, .reg_form dd span.error, .reg_form dd span.warning {
+    padding-left: 22px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 190px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+}
+.reg_form dd span.warning, .reg_form dd span.error, .reg_form dd span.correct {
+    display: none;
+}
+.none{
+	display:none;
+}
+.reg_form h3 strong.hlef {
+    background-position: -24px 0;
+}
+.reg_form dd span.special {
+    line-height: 15px;
+}
+.reg_form dd span.correct {
+    background: url(../images/adm_ico01.png) 0 center no-repeat;
+}
+
+element.style {
+    display: inline;
+}
+.reg_form dd span.warning, .reg_form dd span.error, .reg_form dd span.correct {
+    display: none;
+}
+.reg_form dd span.correct {
+    background: url(../images/adm_ico01.png) 0 center no-repeat;
+}
+
+.reg_form dd input {
+    width: 255px;
+    _height: 32px;
+    float: left;
+}
+.trun {
+	margin-top: 20px;
+	font-size: 25px;
+	color: #b3b3b3;
+}
+.end_form{padding-top:40px;color:#b3b3b3;text-align:left}
+.end_form em{height:50px;width:50px;float:left;background:url(../images/adm_ico05.png) no-repeat;margin-right:20px;margin-left:145px}
+.end_form em.reg_warning{height:50px;width:50px;float:left;background:url(../images/adm_ico06.png) no-repeat;margin-right:20px;margin-left:90px}
+.end_form span{font-size:18px;color:#25c200;display:block}
+.end_reg{color:#b3b3b3;padding-top:60px}
+.end_reg em{height:50px;width:50px;background:url(../images/adm_ico05.png) no-repeat;margin:10px auto;display:block}
+.end_reg span{font-size:18px;color:#25c200;display:block}
+.end_reg .btn{padding-top:60px}
+.end_form .reg_desc { width:350px; float:left;}
+.end_form .reg_desc .now { color:#474747;}
+.end_form .reg_desc .now a{ color:#FF9D13;}
+.end_form .reg_desc p {  margin:0;}
+.end_form .join-btn { width: 182px; float: left;}

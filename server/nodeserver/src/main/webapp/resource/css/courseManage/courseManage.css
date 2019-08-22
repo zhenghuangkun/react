@@ -1,0 +1,153 @@
+/* 已删除状态Ican */
+.deletedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #ff0000;			/* 圆圈颜色-红色 */
+    vertical-align: 0px;
+    background: #ff0000;
+}
+/* 终止状态Ican */
+.terminationIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #b34242;			/* 圆圈颜色-红色 */
+    vertical-align: 0px;
+    background: #b34242;
+}
+/*未提交状态Ican*/
+.noSbmitSIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #dee0d0;			/* 圆圈颜色-橘色 */
+    vertical-align: 0px;
+    background: #dee0d0;
+}
+/*已提交状态Ican*/
+.submitedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #ff8040;			/* 圆圈颜色-橘色 */
+    vertical-align: 0px;
+    background: #ff8040;
+}
+/*未通过状态Ican*/
+.noPassIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #f9ee0c;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #f9ee0c;
+}
+/*已通过状态Ican*/
+.passIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #8fda8b;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #8fda8b;
+}
+/* 已发布状态Ican */
+.launchedIcan{
+	display: inline-block;	/* 设置块级内联对象，元素不换行 */
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 100%;	/* 显示一个圆圈 */
+    color: #2BC042;			/* 圆圈颜色-蓝色 */
+    vertical-align: 0px;
+    background: #2BC042;
+}
+
+
+
+/* 自定义加载 */
+.loader {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+  /* transform的属性包括：rotate() / skew() / scale() / translate() /matrix，分别还有x、y之分，比如：rotatex() 和rotatey() ，以此类推。
+		1.rotate：水平旋转，属性值格式为Xdeg。(deg是“度”的意思)rotate(Xdeg)。X为正数时，顺时针旋转；为负数时，逆时针旋转
+        2.translate：定位元素，基于XY轴重新定位元素。translate(Xpx,Ypx)。属性值为一个时，x、y轴参数相同；为两个时，x、y轴分别定位。
+					特别注意：x,y 为正 表示右，下移，否则相反。   
+        3.scale：缩放，1为原始大小。scale(x)。正数放大，负数缩小。属性值为一个时，x/y轴同时缩放；属性值为两个值时，分别控制x、y轴的缩放。
+		4.skew：将元素沿水平方向倾斜变形。skew(Xdeg,Ydeg)。这个比较难表述，想象一下平行四边形吧。属性值为一个时，x、y轴参数相同；为两个时，x、y轴          各自倾斜matrix：矩阵，六个值。
+	*/
+
+}
+.loader:before, .loader:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+.loader:before {
+  animation: before 20s infinite;
+}
+.loader:after {
+  animation: after 20s infinite;
+}
+
+@keyframes before {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+}
+@keyframes after {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+}

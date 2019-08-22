@@ -1,0 +1,46 @@
+.layui-table img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.experimentTable img {
+	/*顺序：上、右、下、左*/
+    margin: 10px 0;
+}
+
+.experimentTable img {
+    max-width: 200px;
+    max-height: 200px;
+    
+}
+
+/* 第一列设置属性 */
+.mytable tr td:first-child{
+	/* text-align:right; */
+	color:#336199;
+	/* background-color: #EDF3F4; */
+}
+
+/* 第三列设置属性 */
+.mytable tr td:nth-child(3){
+	/* text-align:right; */
+	color:#336199;
+	/* background-color: #EDF3F4; */
+}
+
+
+.row {
+    margin-top: 7px;
+}
+
+
+.studentPic{ 
+   /*  margin-top: 100px;  */
+    width:54px; 
+    height:54px; 
+    border-radius:50px; 
+}
+
+td{
+	word-break:break-all;
+}

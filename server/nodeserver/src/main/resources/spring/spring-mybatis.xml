@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+    <!-- 数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="initialSize" value="${druid.initialSize}"/>
+		<property name="minIdle" value="${druid.minIdle}"/>
+		<property name="maxActive" value="${druid.maxActive}"/>
+		<property name="maxWait" value="${druid.maxWait}"/>
+		<property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}"/>
+		<property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}"/>
+		<property name="validationQuery" value="${druid.validationQuery}"/>
+		<property name="testWhileIdle" value="${druid.testWhileIdle}"/>
+		<property name="testOnBorrow" value="${druid.testOnBorrow}"/>
+		<property name="testOnReturn" value="${druid.testOnReturn}"/>
+		<property name="poolPreparedStatements" value="${druid.poolPreparedStatements}"/>
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="${druid.maxPoolPreparedStatementPerConnectionSize}"/>
+		<property name="filters" value="${druid.filters}"/>
+	</bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mappers/*/*.xml"></property>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+    </bean>
+
+     <!-- 扫描mapper接口（即dao），Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.nodeserver.dao"/>
+    </bean>
+
+    <!-- 事务管理器（transaction manager） -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--使用注解的事务：例如配置事务的传播机制-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+     <!--  配置事务通知属性 -->
+    <tx:advice id="appAdvice" transaction-manager="transactionManager">
+        <!-- 定义事务传播属性 -->
+        <tx:attributes>
+          <tx:method name="delete*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.Exception" no-rollback-for="java.lang.RuntimeException"/>  
+          <tx:method name="insert*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.RuntimeException" />  
+          <tx:method name="add*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.RuntimeException" />  
+          <tx:method name="create*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.RuntimeException" />  
+          <tx:method name="update*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.Exception" />  
+            
+          <tx:method name="find*" propagation="SUPPORTS" />  
+          <tx:method name="get*" propagation="SUPPORTS" />  
+          <tx:method name="select*" propagation="SUPPORTS" />  
+          <tx:method name="query*" propagation="SUPPORTS" />
+          <tx:method name="list*" propagation="SUPPORTS" /> 
+        </tx:attributes>
+    </tx:advice>
+
+	<!-- 配置事务 把事务控制在service层 -->
+  	<aop:config>
+		<aop:pointcut expression="execution(* com.nodeserver.service..*.*(..))" id="appPoint"/>
+		 <!-- 结合事务切点与切面 -->
+        <aop:advisor advice-ref="appAdvice" pointcut-ref="appPoint" />
+	</aop:config>
+
+</beans>

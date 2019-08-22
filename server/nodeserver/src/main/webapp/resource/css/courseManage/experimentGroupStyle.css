@@ -1,0 +1,86 @@
+.modal-header{
+	height:40px;
+	background-color: #5295e7;
+	padding: 8px;
+}
+
+
+.experimentGroupNameCfg{
+	
+	border-bottom: 1px solid #d4dfe5;
+}
+
+#groupName{
+	border-radius:4px;
+	width:90%;
+	border: 1px solid #b9bec5;
+}
+#studentSearch{
+	border-radius:4px;
+	border: 1px solid #b9bec5;
+}
+.tableFiter{
+	margin-top:7px;
+	padding:8px 0px 3px 0px;
+	/* background-color: #eff3f8; */
+}
+.bottomInfo{
+	/* margin-top:10px;
+	margin-bottom:10px;
+	*/
+	padding:25px 0px 10px 0px;
+	/* background-color: #eff3f8; */
+	/* border-bottom: 1px solid #d4dfe5; */
+}
+
+.tableBody>thead>th{
+	width:100%;
+	/* background-color: blue; */
+}
+
+
+/* 设置标题样式 */
+.mytitle{
+	line-height: 1;  							/* 设置行高 */
+    margin-bottom: 16px;						/* 设置离底部距离 */
+    margin-top: 18px;							/* 设置离顶部距离 */
+    padding-left: 10px;						/**/
+    border-left: 4px solid #5094e7;				/* 设置边框 */
+    /* border-left-color: #5094e7;	 */			/* 设置底部边框颜色 */
+    color: #478fca !important;					/* 设置字体颜色 */
+    font-size: 16px;
+}
+
+/* 设置鼠标移入背景色和自动颜色 */
+.studentListTable tr:hover{
+	text-decoration: none; /* 不显示文本下划线 */
+	/* color: #555; */		   /* 字体颜色 */
+	background-color: #ddd; /* 背景色 */
+}
+
+.studentDefPic{ 
+   /*  margin-top: 100px;  */
+    width:24px; 
+    height:24px; 
+    border-radius:50px; 
+}
+
+.myhidden{
+	display: none!important;
+}
+
+.myshow{
+	
+}
+
+.studentCheck{
+	background-color: #DFF0D8;
+}
+
+.studentNoCheck{
+	background-color: #fff;
+}
+
+.studentItem td{
+	padding: 8px 8px 8px 2px;
+}

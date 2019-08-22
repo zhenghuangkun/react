@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nodeserver.dao.LoginManage.LoginDao">
+	<resultMap type="com.nodeserver.entity.User" id="UserListMap">
+		<result property="userName" column="username"/>
+		<result property="passWord" column="password"/>
+	</resultMap>
+
+	<!-- -->
+	<select id="findUserById" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM tb_user AS u
+		 <where>
+			1 = 1
+			AND
+			u.username = #{userName}
+			AND
+			u.password = #{passWord}
+		</where>
+	</select>
+	
+	<!-- -->
+	<select id="findUserInfo" parameterType="String" resultMap="UserListMap">
+		SELECT u.username, u.password
+		FROM tb_user AS u
+		 <where>
+			1 = 1
+			AND
+			u.username = #{userName}
+			AND
+			u.password = #{passWord}
+		</where>
+	</select>
+	
+	<select id="findUserInfoByUserId" parameterType="String" resultMap="UserListMap">
+		SELECT u.username, u.password
+		FROM tb_user AS u
+		 <where>
+			1 = 1
+			AND
+			u.username = #{userName}
+		</where>
+	</select>
+</mapper>
