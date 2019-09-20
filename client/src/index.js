@@ -12,7 +12,6 @@
 // import Home from 'pages/Home/Home';
 // import AppRoot from './AppRoot';
 // import Page1 from 'pages/Page1/Page1';
-// import Counter from 'pages/Counter/Counter';
 //import getRouter from './router/router';
 // import {AppContainer} from 'react-hot-loader'; // 导入保存状态的热更新模块
 // import {Provider} from 'react-redux';
@@ -147,10 +146,10 @@ import ReactDom from 'react-dom';
 //import Counter from './PAGES/Counter/Counter';
 import getRouter from './router/router';
 //import RouterMan from './router/router';
-require("./Resource/Style/common.css");
 //require("./Resource/Style/semantic.css");
 import "semantic-ui-css/semantic.css";
 //import RouterMenu from './router/menu';
+import "./Resource/Style/common.css";
 
 ReactDom.render(
     getRouter(),

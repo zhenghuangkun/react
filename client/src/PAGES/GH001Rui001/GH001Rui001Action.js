@@ -18,6 +18,33 @@ export default class GH001Rui001Action {
      * 登录
      */
     loginReq(){
+        // 判断用户名是否为空
+        if(commonUtilTool.isNullOrEmpty(this.pageModel.userName)){
+            let messageHeader = new MessageHeader();
+            messageHeader.showMessageUtil("GH001Rui001Msg4");
+            return;
+        }
+
+        // 判断密码是否为空
+        if(commonUtilTool.isNullOrEmpty(this.pageModel.passWord)){
+            let messageHeader = new MessageHeader();
+            messageHeader.showMessageUtil("GH001Rui001Msg5");
+            return;
+        }
+
+        // 判断手机号是否为空
+        if(commonUtilTool.isNullOrEmpty(this.pageModel.phone)){
+            let messageHeader = new MessageHeader();
+            messageHeader.showMessageUtil("GH001Rui001Msg2");
+            return;
+        }
+
+        // 判断格式是否正确
+        if(!commonUtilTool.isPhoneNumber(this.pageModel.phone)){
+            let messageHeader = new MessageHeader();
+            messageHeader.showMessageUtil("GH001Rui001Msg3");
+            return;
+        }
         this.server.callServer(this.server, this);
     }
 

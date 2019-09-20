@@ -1,119 +1,89 @@
-/* #main-content {
-    
-    height: 100%;
-    width: 100%;
-} */
+
+
 #main-content{
     height: 100%;
     width: 100%;
     padding: 0; 
     margin: 0;
     box-sizing: border-box ;
-    background-color: #eef2f5;  
+    background-color: #fff;
 }
 
-.navigationbar{
+#navigationbar{
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     background-color: #f9f9f9;
-    margin-bottom: 5px;
-    /* border-top: 1px solid red;
-    border-bottom: 1px solid red; */
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.05); */
+    position: fixed;
+    margin-top: 0;
+    left: 0;
+    right: 0;
+}
+#navigationbarMenu{
+    border-bottom: 8px solid #fff;
+    min-height: 50px;
+}
+
+#subMenubarMenu{
+    width: 100%;
+    border-right: none;
+}
+
+#subMenubarMenu .item{
+    border-right: none;
+}
+
+#subMenubarMenu .active{
+    background-color: rgb(229, 225, 235);
 
 }
 
 #body-content{
-    height: 1000px;
-    min-height: 100%;
     width: 100%;
-    /* display: flex; */
-    
-}
-
-.menubar{
-    width:20%;
-    height: 100%;
-    min-height: 100%;
-    float: left;
-    /* border: 1px solid #ddd;  */
-    background-color: #f9f9f9;
-    /* box-shadow: 2px 2px 2px #ddd; */
-    
-}
-.menuheader{
+    height: 95%;
+    padding: 50px 0 0;
     margin: 0 auto;
+    line-height: 1.57142857;
+    background: #fff;
+    /* min-height: 654px; */
 }
 
-.bodycotent{
-    width:calc(80% - 8px);
-    height: 100%;
-    float: left;
-    /* border: 1px solid #ddd; */
+#sidebar{
     background-color: #f9f9f9;
-    /* margin-left: -100%; */
-    margin-left: 8px;
+    margin-right: 5px;
+    padding-top: 20px;
+    padding-left: 10px;
 }
-.scroll{
-    overflow-y: auto;
+
+#cotent{
+    background-color: #f9f9f9;
+    padding-top: 20px;
+    padding-left: 10px;
 }
 
 
 #footer{
+    margin-top: 5px;
     width:100%;
     height: 30px;
     text-align: center;
 }
 
-.footer-content{
+#footer-content{
     margin: 0 auto;
     bottom: 15px; 
 }
 
-/* #container {
-    width: 90%;
-    margin: 0 auto;
-    height: 100%;
+
+.menuComSetClass.ui.menu .item {
+    line-height: 2;
 }
 
-#header,
-#footer {
-    height: 12.5%;
-    background: deepskyblue;
+.helpItem{
+    position: absolute;
+    bottom: 70px;
+    right: 40px;
 }
-
-#main {
-    height: 75%;
-}
-
-#center,
-#left,
-#right {
-    height: 100%;
-    float: left;
-}
-
-#center {
-    width: 100%;
-    background: lightgreen;
-}
-
-#right {
-    background: lightblue;
-    width: 20%;
-    margin-left: -20%;
-}
-
-#left {
-    background: lightcoral;
-    width: 20%;
-    margin-left: -100%;
-}
-
-#main-inner {
-    padding-left: 20%;
-} */
-
-
 
 .row{
     display: flex;

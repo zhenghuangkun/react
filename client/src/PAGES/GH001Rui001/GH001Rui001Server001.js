@@ -1,6 +1,6 @@
 
 import BaseServer from '../../COMMON/MVC/base/baseServer';
-import commonReduxTool from '../../redux/commonReduxTool';
+import commonReduxTool from '../../COMMON/COM/REDUX/commonReduxTool';
 import commonSessionTool from '../../COMMON/MVC/utils/commonSessionTool';
 import commonPageRedirectTool from '../../COMMON/MVC/utils/commonPageRedirectTool';
 import MessageHeader from '../../COMMON/COM/Component/MessageHeader/MessageHeader.jsx';

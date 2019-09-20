@@ -6,7 +6,7 @@ import UItable_Col from '../../COMMON/COM/Component/DataTable/UItable_Col.jsx';
 import InputText from '../../COMMON/COM/Component/Input/InputText.jsx';
 import commonSessionTool from '../../COMMON/MVC/utils/commonSessionTool.js';
 import { Button, Icon, Table } from 'semantic-ui-react';
-import commonReduxTool from '../../redux/commonReduxTool';
+import commonReduxTool from '../../COMMON/COM/REDUX/commonReduxTool';
 
 export default class Page1 extends Component {
 

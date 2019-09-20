@@ -30,7 +30,6 @@ import Login from 'pages/GH001Rui001/GH001Rui001Page';
 //                         <ul>
 //                             <li><Link to="/">首页</Link></li>
 //                             <li><Link to="/page1">Page1</Link></li>
-//                             <li><Link to="/counter">Counter</Link></li>
 //                         </ul> 
 //                     </div>
 //                     <div id="body">
@@ -74,7 +73,6 @@ import Login from 'pages/GH001Rui001/GH001Rui001Page';
 //                 <ul>
 //                     <li><Link to="/">首页</Link></li>
 //                     <li><Link to="/page1">Page1</Link></li>
-//                     <li><Link to="/counter">Counter</Link></li>
 //                 </ul> 
 //             </div>
 //             <div id="body">
