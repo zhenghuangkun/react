@@ -7,6 +7,8 @@ import commonUtilTool from '../COMMON/MVC/utils/commonUtilTool';
 import RouterMap from './routerMap';
 import NavigationHeader from "componenthome/MenuHeader/NavigationHeader.jsx";
 import SubMenuHeader from "componenthome/MenuHeader/SubMenuHeader.jsx";
+import MenuHeaderModel from '../AUTO/MenuHeader/MenuHeaderModel.jsx';
+import SubMenuModel from '../AUTO/SubMenuH001/SubMenuH001Model.jsx';
 import $ from 'jquery';
 
 export default class Menu extends Component {
@@ -21,8 +23,12 @@ export default class Menu extends Component {
                 token = true;
             }
         }
-        this.token = token;
 
+        this.token = token;
+        this.pageModel = {};
+        this.pageModel.NavigationHeaderModel = new MenuHeaderModel();
+        this.pageModel.subMenuModel = new SubMenuModel();
+        this.pageModel.subMenuModel.subMenuList = commonSessionTool.get('subMenuList');
         this.pageId = commonSessionTool.get('pageId');
     }
 
@@ -30,8 +36,10 @@ export default class Menu extends Component {
      * 正要装载,每一个组件render之前立即调用，页面还没渲染前
      */
 	componentWillMount(){
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-        window.addEventListener('resize', this.handleResize.bind(this));
+        if(this.token == true){
+            window.addEventListener('scroll', this.handleScroll.bind(this));
+            window.addEventListener('resize', this.handleResize.bind(this));
+        }
     }
 
     /**
@@ -68,7 +76,7 @@ export default class Menu extends Component {
     }
 
     updateWindowsSize = (winHeight) =>{
-        console.log('浏览器窗口大小改变事件', winHeight);
+        //console.log('浏览器窗口大小改变事件', winHeight);
         let navHeight = document.getElementById("navigationbar").clientHeight;
         let bodyHeight = document.getElementById("body-content").clientHeight;
         let footerHeight = document.getElementById("footer").clientHeight;
@@ -85,13 +93,13 @@ export default class Menu extends Component {
                 <div id="main-content">
                     {/* ---------导航栏-------- */}
                     <div id="navigationbar">
-                        <NavigationHeader></NavigationHeader>
+                        <NavigationHeader NavigationHeaderModel={this.pageModel.NavigationHeaderModel}></NavigationHeader>
                     </div>
                     <div id="body-content" className="row">
                         {/* ---------菜单栏-------- */}
                         <div id="sidebar" className="col-md-2">
                             <div id="sidebarheader">
-                                <SubMenuHeader></SubMenuHeader>
+                                <SubMenuHeader subMenuModel={this.pageModel.subMenuModel}></SubMenuHeader>
                             </div>
                         </div>
 

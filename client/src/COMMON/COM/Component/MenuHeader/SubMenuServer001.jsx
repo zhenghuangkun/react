@@ -1,5 +1,9 @@
 
 import BaseServer from '../../../MVC/base/baseServer';
+import commonReduxTool from '../../REDUX/commonReduxTool';
+import commonSessionTool from '../../../MVC/utils/commonSessionTool';
+import commonUtilTool from '../../../MVC/utils/commonUtilTool';
+
 
 export default class SubMenuServer001 extends BaseServer{
 
@@ -10,10 +14,20 @@ export default class SubMenuServer001 extends BaseServer{
     dataRequest(pageObj){
         console.log(pageObj);
         let data={};
-        data.userName = pageObj.pageModel.userName;
-        data.password = pageObj.pageModel.passWord;
-        data.phoneNumber = pageObj.pageModel.phone;
-        data.verificationCode = pageObj.pageModel.verificationCode;
+
+        let userInfo = commonReduxTool.getLoginUserObj();
+        if(!commonUtilTool.isNullOrEmpty(userInfo) && userInfo.loginState == true){
+            data.userName = userInfo.userName;
+            data.phoneNumber = userInfo.phoneNumber;
+        }else{
+            let userInfo = commonSessionTool.get('userInfo');
+            if(!commonUtilTool.isNullOrEmpty(userInfo)){
+                data.userName = userInfo.userName;
+                data.phoneNumber = userInfo.phoneNumber;
+            }
+        }
+
+        console.log(data);
         return data;
     }
 
@@ -21,7 +35,12 @@ export default class SubMenuServer001 extends BaseServer{
 
         console.log(dataResult);
         if(dataResult.responseHeader.status == 1){
-            
+            let subMenuList = dataResult.responseData.subMenuList;
+
+            if(!commonUtilTool.isNullOrEmpty(subMenuList)){
+                pageObj.pageModel.subMenuList = subMenuList;
+            }
+            pageObj.setState({model: pageObj.pageModel, initFlag: true});
         }else{
             
         }

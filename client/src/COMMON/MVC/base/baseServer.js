@@ -85,7 +85,8 @@ export default class BaseServer{
         //let path = serverName.substr(0, serverName.length - 5-1);
         //let mockPath = path + '/' + serverName + 'Mock.js';
         let dirname = serverName.substr(0, 11);
-        let mockPath = dirname + "/" + dirname + 'Mock.js';
+        let serverNo = serverName.substr(-3, 3);
+        let mockPath = dirname + "/" + dirname + 'Mock' + serverNo +'.js';
         console.log(mockPath);
         let dataResult;
         try {

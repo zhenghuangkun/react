@@ -36,12 +36,12 @@ export default class GM001Rui001Page extends Component {
             <div className="main-page">
                 {/* menu-tool */}
                 <div>
-
+                    主页面
                 </div>
 
                 {/* menu-bar */}
                 <div>
-
+                    空空如也
                 </div>
             </div>
         )

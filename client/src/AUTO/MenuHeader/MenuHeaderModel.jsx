@@ -18,7 +18,7 @@ export default class MenuHeaderModel{
      * @type {"String"}
      * @memberof MenuHeaderModel
      */
-    activeItem = 'home';
+    navigationActiveItem = 'home';
 
     /**
      * searchContents

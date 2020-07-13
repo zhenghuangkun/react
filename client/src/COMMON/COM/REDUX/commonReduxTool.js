@@ -31,7 +31,7 @@ const commonReduxTool = {
     getLoginState(){
         
         var obj = store.getState();
-        console.log(obj);
+        //console.log(obj);
         if(!obj.reducer){
             return false;
         }
@@ -41,7 +41,7 @@ const commonReduxTool = {
     getLoginUserName(){
         
         var obj = store.getState();
-        console.log(obj);
+        //console.log(obj);
         if(!obj.reducer){
             return "";
         }
@@ -49,6 +49,19 @@ const commonReduxTool = {
             return "";
         }
         return obj.reducer.userName;
+    },
+
+    getLoginUserObj(){
+        
+        var obj = store.getState();
+        //console.log(obj);
+        if(!obj.reducer){
+            return NULL;
+        }
+        if(!obj.reducer.loginState){
+            return NULL;
+        }
+        return obj.reducer;
     }
 }
 

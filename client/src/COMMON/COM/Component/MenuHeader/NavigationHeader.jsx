@@ -7,6 +7,7 @@ import MenuHeaderModel from '../../../../AUTO/MenuHeader/MenuHeaderModel.jsx';
 import commonReduxTool from '../../REDUX/commonReduxTool';
 import commonSessionTool from '../../../MVC/utils/commonSessionTool';
 import commonUtilTool from '../../../MVC/utils/commonUtilTool';
+import { Link} from 'react-router-dom';
 
 const colors = [
     'red',
@@ -27,10 +28,14 @@ const colors = [
 export default class NavigationHeader  extends Component{
     constructor(props) {
         super(props);
+
+        //this.NavigationHeaderModel = props.NavigationHeaderModel;
+
         this.action = new NavigationAction();
         //this.server = new NavigationServer();
-        //this.pageModel = {activeItem:"home"};
-        this.pageModel = new MenuHeaderModel();
+        //this.pageModel = {navigationActiveItem:"home"};
+        //this.pageModel = new MenuHeaderModel();
+        this.pageModel = props.NavigationHeaderModel;
         //let model = new NavigationHeaderModel.getModel("MenuHeader", 'cn');
         //let pagem = new model()
         //console.log(model.homePage);
@@ -73,15 +78,11 @@ export default class NavigationHeader  extends Component{
                     <Menu.Item>
                         <img src='Resource/image/com/logo.png' />
                     </Menu.Item>
-                    <Menu.Item name="home" active={this.state.model.activeItem === "home"} onClick={this.action.handleItemClick.bind(this, "home")}>
+                    <Menu.Item name="home" active={this.state.model.navigationActiveItem === "home"} onClick={this.action.handleItemClick.bind(this, "home")}>
                         首页
                     </Menu.Item>
-                    <Menu.Item name="company" active={this.state.model.activeItem === "company"} onClick={this.action.handleItemClick.bind(this, "company")}>
+                    <Menu.Item name="company" active={this.state.model.navigationActiveItem === "company"} onClick={this.action.handleItemClick.bind(this, "company")}>
                         公司简介
-                    </Menu.Item>
-
-                    <Menu.Item>
-                        
                     </Menu.Item>
 
                     <Menu.Menu position='right'>
@@ -91,6 +92,22 @@ export default class NavigationHeader  extends Component{
                                 placeholder="Search contents..."
                                 onChange={e => this.pageModel.searchContents = e.target.value}
                             />
+                        </Menu.Item>
+                    </Menu.Menu>
+
+                    <Menu.Menu position='right'>
+                        {/* <Menu.Item>
+                            <Input 
+                                icon={{ name: 'search', link: true , onClick:this.action.searchClick.bind(this)}}
+                                placeholder="Search contents..."
+                                onChange={e => this.pageModel.searchContents = e.target.value}
+                            />
+                        </Menu.Item> */}
+                        <Menu.Item name="courseStudy" 
+                        active={this.state.model.navigationActiveItem === "courseStudy"} 
+                        onClick={this.action.handleItemClick.bind(this, "courseStudy")}
+                        >
+                        学习
                         </Menu.Item>
 
                         <Menu.Item>
@@ -114,7 +131,7 @@ export default class NavigationHeader  extends Component{
 
                         <Menu.Item
                             name='logout'
-                            active={this.state.model.activeItem === 'logout'}
+                            active={this.state.model.navigationActiveItem === 'logout'}
                             onClick={this.action.signOut.bind(this)}
                         >
                             退出

@@ -27,12 +27,20 @@ export default class GH001Rui001Server001 extends BaseServer{
             pageObj.pageModel.errFlag = true;
             pageObj.pageModel.errMessage = '';
             //pageObj.setState({model: pageObj.pageModel, initFlag: true});
-            commonReduxTool.updateLoginState({loginState: true, userName:pageObj.pageModel.userName});
+            commonReduxTool.updateLoginState({loginState: true, 
+                                              userName:pageObj.pageModel.userName,
+                                              phoneNumber:pageObj.pageModel.phone
+                                            });
             console.log( commonReduxTool.getLoginState());
 
             commonSessionTool.push('userInfo', {
                 loginState: true,
-                userName: pageObj.pageModel.userName});
+                userName: pageObj.pageModel.userName,
+                phoneNumber:pageObj.pageModel.phone
+            });
+
+            commonSessionTool.push('subMenuList', dataResult.responseData.subMenuList);
+
             //window.location.href = "page1";
             commonSessionTool.push('pageId', "login");
             //commonPageRedirectTool.redirect(pageObj, "page1");
@@ -44,7 +52,6 @@ export default class GH001Rui001Server001 extends BaseServer{
             //pageObj.setState({model: pageObj.pageModel, initFlag: true});
             messageHeader.showMessageUtil("GH001Rui001Msg1");
         }
-        
         
     }
     

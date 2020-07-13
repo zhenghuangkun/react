@@ -37,7 +37,7 @@ const CommonSessionTool = {
             // array
             if(Array.isArray(value)){
                 //obj.value = ARRAYTYPE;
-                var tmpValue = ARRAYTYPE + value.join('-');
+                var tmpValue = ARRAYTYPE + JSON.stringify(value);
                 sStorage[name] = tmpValue;
 
             // object
@@ -88,20 +88,9 @@ const CommonSessionTool = {
 
         // array
         }else if(type == ARRAYTYPE){
-            var tmpArr = value.split('-');
-            var returnArr = new Array();
-            var i,len = tmpArr.length;
+            
 
-            for(i=0; i<len; i++){
-                if(typeof(tmpArr[i]*1) === 'number'){
-                    
-                    returnArr.push(tmpArr[i]*1);
-                }else{
-                    returnArr.push(tmpArr[i]);
-                }
-            }
-
-            return returnArr;
+            return JSON.parse(value);
         }
 
     },

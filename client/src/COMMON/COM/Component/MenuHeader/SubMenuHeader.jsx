@@ -3,17 +3,17 @@ import SubMenuAction from "./SubMenuAction.jsx"
 import SubMenuServer from "./SubMenuServer001.jsx"
 import {Button, Menu, Dropdown, Input, List, Image} from "semantic-ui-react";
 import InputText from '../Input/InputText.jsx';
-import SubMenuModel from '../../../../AUTO/MenuHeader/SubMenuModel.jsx';
-
-
+import SubMenuModel from '../../../../AUTO/SubMenuH001/SubMenuH001Model.jsx';
+import LoaderHeader from '../LoaderHeader/LoaderHeader.jsx';
+import { Link} from 'react-router-dom';
 
 export default class SubMenuHeader  extends Component{
     constructor(props) {
         super(props);
         this.action = new SubMenuAction();
-        this.server = new SubMenuServer();
-        this.pageModel = new SubMenuModel();
-
+        this.server = new SubMenuServer("SubMenuH001Server001");
+        //this.pageModel = new SubMenuModel();
+        this.pageModel = props.subMenuModel;
         this.state = {
             model:this.pageModel,
             initFlag: true
@@ -38,87 +38,80 @@ export default class SubMenuHeader  extends Component{
 
     render() {
        if(this.state.initFlag){
+           let subSecondCnt = 0;
             return(
                 <Menu pointing secondary vertical id="subMenubarMenu">
-                    <Menu.Item>
-                    <Menu.Header>Products</Menu.Header>
+                    {
+                        this.state.model.subMenuList.map((item, index1) => (
+                            <Menu.Item key={"sub_"+index1}>
+                                <Menu.Header >{item.name}</Menu.Header>
+                                <Menu.Menu>
+                                {
+                                    item.secondMenuList.map((subItem, index2) =>{
+                                        subSecondCnt++;
+                                        // let subKeyId = "subSecond_" + subSecondCnt;
+                                        let subKeyId = subItem.name + "_" + index1 + "_" + index2;
+                                        return (
+                                        // <Menu.Item
+                                        //     key={subKeyId}
+                                        //     name={name}
+                                        //     active={this.state.model.subMenuActiveItem === name}
+                                        //     onClick={this.action.handleItemClick.bind(this, name, subItem.url) }
+                                        // >
+                                        // {subItem.name}
+                                        // </Menu.Item>
+                                        <Link 
+                                            to={subItem.url} 
+                                            key={subKeyId} 
+                                            id={subKeyId} 
+                                            className="item"
+                                            onClick={this.action.handleItemClick.bind(this, subKeyId)}
+                                        >
+                                        {subItem.name}
+                                        </Link>
 
-                    <Menu.Menu>
-                        <Menu.Item
-                        name='enterprise'
-                        active={this.state.model.activeItem === 'enterprise'}
-                        onClick={this.action.handleItemClick.bind(this,'enterprise') }
-                        />
-                        <Menu.Item
-                        name='consumer'
-                        active={this.state.model.activeItem === 'consumer'}
-                        onClick={this.action.handleItemClick.bind(this,'consumer') }
-                        />
-                    </Menu.Menu>
-                    </Menu.Item>
-
-                    <Menu.Item>
-                    <Menu.Header>CMS Solutions</Menu.Header>
-
-                    <Menu.Menu>
-                        <Menu.Item
-                        name='rails'
-                        active={this.state.model.activeItem === 'rails'}
-                        onClick={this.action.handleItemClick.bind(this,'rails') }
-                        />
-                        <Menu.Item
-                        name='python'
-                        active={this.state.model.activeItem === 'python'}
-                        onClick={this.action.handleItemClick.bind(this,'python') }
-                        />
-                        <Menu.Item
-                        name='php'
-                        active={this.state.model.activeItem === 'php'}
-                        onClick={this.action.handleItemClick.bind(this,'php') }
-                        />
-                    </Menu.Menu>
-                    </Menu.Item>
-
-                    <Menu.Item>
-                    <Menu.Header>Hosting</Menu.Header>
-
-                    <Menu.Menu>
-                        <Menu.Item
-                        name='shared'
-                        active={this.state.model.activeItem === 'shared'}
-                        onClick={this.action.handleItemClick.bind(this,'shared') }
-                        />
-                        <Menu.Item
-                        name='dedicated'
-                        active={this.state.model.activeItem === 'dedicated'}
-                        onClick={this.action.handleItemClick.bind(this,'dedicated') }
-                        />
-                    </Menu.Menu>
-                    </Menu.Item>
-
-                    <Menu.Item>
-                    <Menu.Header>Support</Menu.Header>
-
-                    <Menu.Menu>
-                        <Menu.Item
-                        name='email'
-                        active={this.state.model.activeItem === 'email'}
-                        onClick={this.action.handleItemClick.bind(this,'email') }
-                        >
-                        E-mail Support
-                        </Menu.Item>
-
-                        <Menu.Item
-                        name='faq'
-                        active={this.state.model.activeItem === 'faq'}
-                        onClick={this.action.handleItemClick.bind(this,'faq') }
-                        >
-                        FAQs
-                        </Menu.Item>
-                    </Menu.Menu>
-                    </Menu.Item>
+                                        )
+                                        
+                                    })
+                                }
+                                </Menu.Menu>
+                            </Menu.Item>
+                        ))
+                    }
                 </Menu>
+                // <div>
+                //     {
+                //         this.state.model.subMenuList.map((item, index1) => {
+                //             let keyId = "sub_"+index1;
+                //             return (<div className="menuHead" id={keyId}>
+                //                 <div className="row">
+                //                     <i className="left icon angle right"></i>
+                //                     <span>{item.name}</span>
+                //                 </div>
+                //                 <div className="menuHeadSub" >
+                //                     <ul className="menuHeadSubList">
+                //                     {
+                //                         item.secondMenuList.map((subItem, index2) =>{
+                //                             let subKeyId = subItem.name + "_" + index1 + "_" + index2;
+
+                //                             return (
+                //                                     <li id={subKeyId}><a href={subItem.url}>{subItem.name}</a></li>
+                //                                 )
+                //                         })
+                //                     }
+                //                     </ul>
+                //                 </div>
+
+                //             </div>)
+                //         })
+                //     }
+                // </div>
             );
+       }
+       else{
+            return (
+                <LoaderHeader></LoaderHeader>
+            )
        } 
     }
 }

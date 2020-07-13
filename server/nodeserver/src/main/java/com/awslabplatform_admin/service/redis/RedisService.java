@@ -12,9 +12,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
- * @author yuzhh
+ * @author zhenghk
  * @date 2018.6.5
- * @Description redis缓存
+ * @Description redis
  */
 @Resource(name="redisService")
 public class RedisService {

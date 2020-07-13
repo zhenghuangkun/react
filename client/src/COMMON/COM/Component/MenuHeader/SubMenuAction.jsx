@@ -7,31 +7,21 @@ export default class SubMenuAction {
     }
 
     initData(obj){
-
+        obj.server.callServer(obj.server, obj);
     }
 
     /**
      * 菜单点击事件
      */
-    handleItemClick(name){
+    handleItemClick(name, ){
         //console.log(e);
+
         let pageObj = this;
         console.log("name " + name + "click");
-        console.log(pageObj.pageModel.activeItem);
-        pageObj.pageModel.activeItem = name;
+        console.log(pageObj.pageModel.subMenuActiveItem);
+        pageObj.pageModel.subMenuActiveItem = name;
         pageObj.setState({model: pageObj.pageModel, initFlag: true});
     }
 
-    /**
-     *
-     */
-    searchClick(){
-        console.log(this.pageModel.searchContents);
-    }
-    /**
-     *
-     */
-    signOut(){
-        window.location.href = "/";
-    }
+    
 }

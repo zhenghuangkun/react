@@ -6,7 +6,8 @@ import {SETLOGINSTATE} from '../actions/actions';
 
 const initState = {
     loginState: false,
-    userName:''
+    userName: '',
+    phoneNumber: ''
 };
 /*
 * reducer
@@ -17,12 +18,14 @@ export default function stateChanger (state, action) {
             if(action.loginState == false){
                 return {
                     loginState: false,
-                    userName:''
+                    userName:'',
+                    phoneNumber:''
                 }
             }else{
                 return {
                     loginState: true,
-                    userName: action.userName
+                    userName: action.userName,
+                    phoneNumber: action.phoneNumber
                 } 
             }
         default:

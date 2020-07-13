@@ -83,7 +83,237 @@
     position: absolute;
     bottom: 70px;
     right: 40px;
+    z-index: 1;
 }
+
+@-webkit-keyframes myloading1 {
+    0%{
+        /* -webkit-transform: rotate(0deg); */
+        background-color: #0b9ff5;
+        top:0px;
+        left:0px;
+    }
+    8.3%{
+        background-color: #29acf8;
+        top:2.68px;
+        left:-10px;
+    }
+    16.67%{
+        background-color: #57c0fd;
+        top:10px;
+        left:-17.34px;
+    }
+    /* 1/4 */
+
+    25%{
+        background-color: #7fcaf5;
+        top:20px;
+        left:-20px;
+    }
+    33.33%{
+        background-color: #abdcf8;
+        top:30px;
+        left:-17.34px;
+    }
+    41.67%{
+        background-color: #0b4569;
+        top:37.34px;
+        left:-10px;
+    }
+    /* 2/4 */
+
+    50%{
+        background-color: #032335;
+        top:40px;
+        left:0px;
+    }
+    58.33%{
+        background-color: #056da8;
+        top:37.34px;
+        left:10px;
+    }
+    66.67%{
+        background-color: #0981c7;
+        top:30px;
+        left:17.34px;
+    }
+    /* 3/4 */
+
+    75%{
+        background-color: #0891e0;
+        top:20px;
+        left:20px;
+    }
+    83.33%{
+        background-color: #0b9ff5;
+        top:10px;
+        left:17.34px;
+    }
+    91.67%{
+        background-color: #0b9ff5;
+        top:2.68px;
+        left:10px;
+    }
+    100%{
+        background-color: #0b9ff5;
+        top:0px;
+        left:0px;
+    }
+    /* 4/4 */
+}
+#loaderBackground{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #fefefe;
+    z-index: 2;
+}
+
+#centerLoader{
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 25px);
+}
+/* loading style1 */
+/* #loaderItem{
+    width: 50px;
+    height: 50px;
+    background-image: url(/Resource/image/com/loader/loader004.gif);
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+} */
+
+/* loading style2 */
+/* #loaderItem{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    animation:myloading1 5s infinite;
+    -webkit-animation: myloading1 2s infinite; / * Safari 与 Chrome * /
+} */
+
+/* loading style3 */
+@-webkit-keyframes myloading3_1{
+    0%{
+        left:0px;
+        width: 30px;
+        height: 30px;
+    }
+
+    12.5%{
+        left:10px;
+        width: 25px;
+        height: 25px;
+    }
+    25%{
+        left:20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    37.5%{
+        left:30px;
+        width: 15px;
+        height: 15px;
+    }
+    50%{
+        left:40px;
+        width: 10px;
+        height: 10px;
+    }
+    62.5%{
+        left:30px;
+        width: 15px;
+        height: 15px;
+    }
+    75%{
+        left:20px;
+        width: 20px;
+        height: 20px;
+    }
+    87.5%{
+        left:10px;
+        width: 25px;
+        height: 25px;
+    }
+    100%{
+        left:0px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@-webkit-keyframes myloading3_2{
+    0%{
+        left:40px;
+        width: 30px;
+        height: 30px;
+    }
+    12.5%{
+        left:30px;
+        width: 25px;
+        height: 25px;
+    }
+    25%{
+        left:20px;
+        width: 20px;
+        height: 20px;
+    }
+    37.5%{
+        left:10px;
+        width: 15px;
+        height: 15px;
+    }
+    50%{
+        left:0px;
+        width: 10px;
+        height: 10px;
+    }
+    62.5%{
+        left:10px;
+        width: 15px;
+        height: 15px;
+    }
+    75%{
+        left:20px;
+        width: 20px;
+        height: 20px;
+    }
+    87.5%{
+        left:30px;
+        width: 25px;
+        height: 25px;
+    }
+    100%{
+        left:40px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#loaderItem{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50%;
+    background-color: #0981c7;
+    animation:myloading3_1 1s infinite;
+    -webkit-animation: myloading3_1 2s infinite; /* Safari 与 Chrome*/
+} 
+
+#loaderItem2{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50%;
+    background-color: #FFB752;
+    animation:myloading3_2 1s infinite;
+    -webkit-animation: myloading3_2 2s infinite; /* Safari 与 Chrome*/
+} 
 
 .row{
     display: flex;
